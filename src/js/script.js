@@ -3,7 +3,7 @@ const reservas = document.getElementById("reservas")
 
 document.addEventListener('DOMContentLoaded',()=>{
   async  function ListarUsuarios() {
-    const resposta = await fetch('http://localhost:8080')
+    const resposta = await fetch('https://api-cadastro-de-reservas.onrender.com/')
     const dados = await resposta.json()
 
    console.log(dados)
@@ -39,7 +39,7 @@ form.addEventListener('submit',async (e)=>{
         quantidade: pegarDados.get("quantidade")
     }
 
-    const resposta = await fetch("http://localhost:8080",{
+    const resposta = await fetch("https://api-cadastro-de-reservas.onrender.com/",{
         method : "POST",
         headers:{
             'content-type':'application/json'
